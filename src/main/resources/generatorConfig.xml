@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<classPathEntry location="D:\\XtjDevelop\\repository\\mysql\\mysql-connector-java\\5.1.49\\mysql-connector-java-5.1.49.jar" />
+<context id="context1" targetRuntime="MyBatis3">
+
+	<plugin type="com.sogaa.system.plugin.PaginationPlugin"></plugin>
+
+	<commentGenerator>
+		<property name="suppressAllComments" value="true" />
+	</commentGenerator>
+
+	<jdbcConnection
+			connectionURL="jdbc:mysql://dev-it:3306/sogaa_dev?useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true&amp;useSSL=false"
+			driverClass="com.mysql.jdbc.Driver" password="root" userId="root"/>
+
+	<!-- 生成模型的包名和位置-->
+	<javaModelGenerator targetPackage="com.sogaa.system.service.businessfunctionrelation.bean" targetProject="src/main/java">
+		<property name="enableSubPackages" value="true"/>
+		<property name="trimStrings" value="true"/>
+	</javaModelGenerator>
+
+	<!-- 生成映射文件的包名和位置-->
+	<sqlMapGenerator targetPackage="com.sogaa.system.service.businessfunctionrelation.dao.mapper" targetProject="src/main/java">
+		<property name="enableSubPackages" value="true"/>
+	</sqlMapGenerator>
+
+	<!-- 生成mapper位置-->
+	<javaClientGenerator type="XMLMAPPER" targetPackage="com.sogaa.system.service.businessfunctionrelation.dao" targetProject="src/main/java">
+		<property name="enableSubPackages" value="true"/>
+	</javaClientGenerator>
+
+	<table tableName="quotation_base" domainObjectName="QuotationBase">
+	</table>
+
+</context>
+</generatorConfiguration>

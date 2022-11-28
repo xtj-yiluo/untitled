@@ -1,0 +1,1387 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sogaa.system.service.businessfunctionrelation.dao.QuotationBaseMapper" >
+  <resultMap id="BaseResultMap" type="com.sogaa.system.service.businessfunctionrelation.bean.QuotationBase" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="inquirer" property="inquirer" jdbcType="VARCHAR" />
+    <result column="inquirer_name" property="inquirerName" jdbcType="VARCHAR" />
+    <result column="inquirer_company" property="inquirerCompany" jdbcType="VARCHAR" />
+    <result column="inquirer_time" property="inquirerTime" jdbcType="VARCHAR" />
+    <result column="machining_type" property="machiningType" jdbcType="VARCHAR" />
+    <result column="has_material" property="hasMaterial" jdbcType="VARCHAR" />
+    <result column="user_drawing_location" property="userDrawingLocation" jdbcType="VARCHAR" />
+    <result column="user_list_location" property="userListLocation" jdbcType="VARCHAR" />
+    <result column="priority" property="priority" jdbcType="VARCHAR" />
+    <result column="delivery_time" property="deliveryTime" jdbcType="VARCHAR" />
+    <result column="express_pay_type" property="expressPayType" jdbcType="VARCHAR" />
+    <result column="express_fee" property="expressFee" jdbcType="DOUBLE" />
+    <result column="need_design" property="needDesign" jdbcType="VARCHAR" />
+    <result column="design_fee" property="designFee" jdbcType="DOUBLE" />
+    <result column="profit" property="profit" jdbcType="DOUBLE" />
+    <result column="tax_rate" property="taxRate" jdbcType="VARCHAR" />
+    <result column="tax" property="tax" jdbcType="DOUBLE" />
+    <result column="discount" property="discount" jdbcType="DOUBLE" />
+    <result column="discount_rate" property="discountRate" jdbcType="DOUBLE" />
+    <result column="total" property="total" jdbcType="DOUBLE" />
+    <result column="final_price" property="finalPrice" jdbcType="DOUBLE" />
+    <result column="final_price_discount" property="finalPriceDiscount" jdbcType="DOUBLE" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="show_tax" property="showTax" jdbcType="CHAR" />
+    <result column="quoter" property="quoter" jdbcType="VARCHAR" />
+    <result column="pro_status" property="proStatus" jdbcType="VARCHAR" />
+    <result column="requote" property="requote" jdbcType="INTEGER" />
+    <result column="over_time" property="overTime" jdbcType="VARCHAR" />
+    <result column="has_order_intention" property="hasOrderIntention" jdbcType="VARCHAR" />
+    <result column="has_order" property="hasOrder" jdbcType="VARCHAR" />
+    <result column="quote_pdf" property="quotePdf" jdbcType="VARCHAR" />
+    <result column="quote_xls" property="quoteXls" jdbcType="VARCHAR" />
+    <result column="cost_price" property="costPrice" jdbcType="DOUBLE" />
+    <result column="gross_profit" property="grossProfit" jdbcType="DOUBLE" />
+    <result column="gross_profit_rate" property="grossProfitRate" jdbcType="DOUBLE" />
+    <result column="last_drawing_location" property="lastDrawingLocation" jdbcType="VARCHAR" />
+    <result column="last_list_location" property="lastListLocation" jdbcType="VARCHAR" />
+    <result column="lose_remark" property="loseRemark" jdbcType="VARCHAR" />
+    <result column="lose_time" property="loseTime" jdbcType="TIMESTAMP" />
+    <result column="lose_reason" property="loseReason" jdbcType="VARCHAR" />
+    <result column="lose_person" property="losePerson" jdbcType="VARCHAR" />
+    <result column="is_urgent" property="isUrgent" jdbcType="VARCHAR" />
+    <result column="urgent_fee" property="urgentFee" jdbcType="VARCHAR" />
+    <result column="ROUND" property="round" jdbcType="VARCHAR" />
+    <result column="inner_quote_status" property="innerQuoteStatus" jdbcType="VARCHAR" />
+    <result column="tax_rate_point" property="taxRatePoint" jdbcType="DECIMAL" />
+    <result column="is_remark" property="isRemark" jdbcType="VARCHAR" />
+    <result column="order_size" property="orderSize" jdbcType="VARCHAR" />
+    <result column="follow_up" property="followUp" jdbcType="VARCHAR" />
+    <result column="is_regular" property="isRegular" jdbcType="VARCHAR" />
+    <result column="expect_delivery_days" property="expectDeliveryDays" jdbcType="VARCHAR" />
+    <result column="expect_total_price" property="expectTotalPrice" jdbcType="DOUBLE" />
+    <result column="whether_contains_freight" property="whetherContainsFreight" jdbcType="VARCHAR" />
+    <result column="ever_machined" property="everMachined" jdbcType="VARCHAR" />
+    <result column="quotation_from_supplier" property="quotationFromSupplier" jdbcType="VARCHAR" />
+    <result column="send_city" property="sendCity" jdbcType="VARCHAR" />
+    <result column="no_freight_reason" property="noFreightReason" jdbcType="VARCHAR" />
+    <result column="toning_fee" property="toningFee" jdbcType="DECIMAL" />
+    <result column="min_spread_price" property="minSpreadPrice" jdbcType="DECIMAL" />
+    <result column="expect_quote_time" property="expectQuoteTime" jdbcType="TIMESTAMP" />
+    <result column="drawing_standard" property="drawingStandard" jdbcType="CHAR" />
+    <result column="delivery_date" property="deliveryDate" jdbcType="VARCHAR" />
+    <result column="wire_service_fee" property="wireServiceFee" jdbcType="DECIMAL" />
+    <result column="related_address_id" property="relatedAddressId" jdbcType="VARCHAR" />
+    <result column="material_cert_fee" property="materialCertFee" jdbcType="DECIMAL" />
+    <result column="dim_inspection_fee" property="dimInspectionFee" jdbcType="DECIMAL" />
+    <result column="cmm_inspection_fee" property="cmmInspectionFee" jdbcType="DECIMAL" />
+    <result column="inquirer_time_zone" property="inquirerTimeZone" jdbcType="VARCHAR" />
+    <result column="shipping_term_type" property="shippingTermType" jdbcType="VARCHAR" />
+    <result column="payment_condition_type" property="paymentConditionType" jdbcType="VARCHAR" />
+    <result column="customer_status" property="customerStatus" jdbcType="VARCHAR" />
+    <result column="load_time_standard" property="loadTimeStandard" jdbcType="VARCHAR" />
+    <result column="shipping_standard" property="shippingStandard" jdbcType="VARCHAR" />
+    <result column="shipping_cycle" property="shippingCycle" jdbcType="VARCHAR" />
+    <result column="shipping_term" property="shippingTerm" jdbcType="VARCHAR" />
+    <result column="custom_duty" property="customDuty" jdbcType="DECIMAL" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, inquirer, inquirer_name, inquirer_company, inquirer_time, machining_type, has_material, 
+    user_drawing_location, user_list_location, priority, delivery_time, express_pay_type, 
+    express_fee, need_design, design_fee, profit, tax_rate, tax, discount, discount_rate, 
+    total, final_price, final_price_discount, remark, show_tax, quoter, pro_status, requote, 
+    over_time, has_order_intention, has_order, quote_pdf, quote_xls, cost_price, gross_profit, 
+    gross_profit_rate, last_drawing_location, last_list_location, lose_remark, lose_time, 
+    lose_reason, lose_person, is_urgent, urgent_fee, ROUND, inner_quote_status, tax_rate_point, 
+    is_remark, order_size, follow_up, is_regular, expect_delivery_days, expect_total_price, 
+    whether_contains_freight, ever_machined, quotation_from_supplier, send_city, no_freight_reason, 
+    toning_fee, min_spread_price, expect_quote_time, drawing_standard, delivery_date, 
+    wire_service_fee, related_address_id, material_cert_fee, dim_inspection_fee, cmm_inspection_fee, 
+    inquirer_time_zone, shipping_term_type, payment_condition_type, customer_status, 
+    load_time_standard, shipping_standard, shipping_cycle, shipping_term, custom_duty, 
+    create_time, gmt_modified
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.sogaa.system.service.businessfunctionrelation.bean.QuotationBaseExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from quotation_base
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="start != null and start >=0" >
+      limit ${start} , ${limit}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from quotation_base
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from quotation_base
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.sogaa.system.service.businessfunctionrelation.bean.QuotationBaseExample" >
+    delete from quotation_base
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.sogaa.system.service.businessfunctionrelation.bean.QuotationBase" >
+    insert into quotation_base (id, inquirer, inquirer_name, 
+      inquirer_company, inquirer_time, machining_type, 
+      has_material, user_drawing_location, user_list_location, 
+      priority, delivery_time, express_pay_type, 
+      express_fee, need_design, design_fee, 
+      profit, tax_rate, tax, 
+      discount, discount_rate, total, 
+      final_price, final_price_discount, remark, 
+      show_tax, quoter, pro_status, 
+      requote, over_time, has_order_intention, 
+      has_order, quote_pdf, quote_xls, 
+      cost_price, gross_profit, gross_profit_rate, 
+      last_drawing_location, last_list_location, 
+      lose_remark, lose_time, lose_reason, 
+      lose_person, is_urgent, urgent_fee, 
+      ROUND, inner_quote_status, tax_rate_point, 
+      is_remark, order_size, follow_up, 
+      is_regular, expect_delivery_days, expect_total_price, 
+      whether_contains_freight, ever_machined, quotation_from_supplier, 
+      send_city, no_freight_reason, toning_fee, 
+      min_spread_price, expect_quote_time, drawing_standard, 
+      delivery_date, wire_service_fee, related_address_id, 
+      material_cert_fee, dim_inspection_fee, cmm_inspection_fee, 
+      inquirer_time_zone, shipping_term_type, payment_condition_type, 
+      customer_status, load_time_standard, shipping_standard, 
+      shipping_cycle, shipping_term, custom_duty, 
+      create_time, gmt_modified)
+    values (#{id,jdbcType=VARCHAR}, #{inquirer,jdbcType=VARCHAR}, #{inquirerName,jdbcType=VARCHAR}, 
+      #{inquirerCompany,jdbcType=VARCHAR}, #{inquirerTime,jdbcType=VARCHAR}, #{machiningType,jdbcType=VARCHAR}, 
+      #{hasMaterial,jdbcType=VARCHAR}, #{userDrawingLocation,jdbcType=VARCHAR}, #{userListLocation,jdbcType=VARCHAR}, 
+      #{priority,jdbcType=VARCHAR}, #{deliveryTime,jdbcType=VARCHAR}, #{expressPayType,jdbcType=VARCHAR}, 
+      #{expressFee,jdbcType=DOUBLE}, #{needDesign,jdbcType=VARCHAR}, #{designFee,jdbcType=DOUBLE}, 
+      #{profit,jdbcType=DOUBLE}, #{taxRate,jdbcType=VARCHAR}, #{tax,jdbcType=DOUBLE}, 
+      #{discount,jdbcType=DOUBLE}, #{discountRate,jdbcType=DOUBLE}, #{total,jdbcType=DOUBLE}, 
+      #{finalPrice,jdbcType=DOUBLE}, #{finalPriceDiscount,jdbcType=DOUBLE}, #{remark,jdbcType=VARCHAR}, 
+      #{showTax,jdbcType=CHAR}, #{quoter,jdbcType=VARCHAR}, #{proStatus,jdbcType=VARCHAR}, 
+      #{requote,jdbcType=INTEGER}, #{overTime,jdbcType=VARCHAR}, #{hasOrderIntention,jdbcType=VARCHAR}, 
+      #{hasOrder,jdbcType=VARCHAR}, #{quotePdf,jdbcType=VARCHAR}, #{quoteXls,jdbcType=VARCHAR}, 
+      #{costPrice,jdbcType=DOUBLE}, #{grossProfit,jdbcType=DOUBLE}, #{grossProfitRate,jdbcType=DOUBLE}, 
+      #{lastDrawingLocation,jdbcType=VARCHAR}, #{lastListLocation,jdbcType=VARCHAR}, 
+      #{loseRemark,jdbcType=VARCHAR}, #{loseTime,jdbcType=TIMESTAMP}, #{loseReason,jdbcType=VARCHAR}, 
+      #{losePerson,jdbcType=VARCHAR}, #{isUrgent,jdbcType=VARCHAR}, #{urgentFee,jdbcType=VARCHAR}, 
+      #{round,jdbcType=VARCHAR}, #{innerQuoteStatus,jdbcType=VARCHAR}, #{taxRatePoint,jdbcType=DECIMAL}, 
+      #{isRemark,jdbcType=VARCHAR}, #{orderSize,jdbcType=VARCHAR}, #{followUp,jdbcType=VARCHAR}, 
+      #{isRegular,jdbcType=VARCHAR}, #{expectDeliveryDays,jdbcType=VARCHAR}, #{expectTotalPrice,jdbcType=DOUBLE}, 
+      #{whetherContainsFreight,jdbcType=VARCHAR}, #{everMachined,jdbcType=VARCHAR}, #{quotationFromSupplier,jdbcType=VARCHAR}, 
+      #{sendCity,jdbcType=VARCHAR}, #{noFreightReason,jdbcType=VARCHAR}, #{toningFee,jdbcType=DECIMAL}, 
+      #{minSpreadPrice,jdbcType=DECIMAL}, #{expectQuoteTime,jdbcType=TIMESTAMP}, #{drawingStandard,jdbcType=CHAR}, 
+      #{deliveryDate,jdbcType=VARCHAR}, #{wireServiceFee,jdbcType=DECIMAL}, #{relatedAddressId,jdbcType=VARCHAR}, 
+      #{materialCertFee,jdbcType=DECIMAL}, #{dimInspectionFee,jdbcType=DECIMAL}, #{cmmInspectionFee,jdbcType=DECIMAL}, 
+      #{inquirerTimeZone,jdbcType=VARCHAR}, #{shippingTermType,jdbcType=VARCHAR}, #{paymentConditionType,jdbcType=VARCHAR}, 
+      #{customerStatus,jdbcType=VARCHAR}, #{loadTimeStandard,jdbcType=VARCHAR}, #{shippingStandard,jdbcType=VARCHAR}, 
+      #{shippingCycle,jdbcType=VARCHAR}, #{shippingTerm,jdbcType=VARCHAR}, #{customDuty,jdbcType=DECIMAL}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sogaa.system.service.businessfunctionrelation.bean.QuotationBase" >
+    insert into quotation_base
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="inquirer != null" >
+        inquirer,
+      </if>
+      <if test="inquirerName != null" >
+        inquirer_name,
+      </if>
+      <if test="inquirerCompany != null" >
+        inquirer_company,
+      </if>
+      <if test="inquirerTime != null" >
+        inquirer_time,
+      </if>
+      <if test="machiningType != null" >
+        machining_type,
+      </if>
+      <if test="hasMaterial != null" >
+        has_material,
+      </if>
+      <if test="userDrawingLocation != null" >
+        user_drawing_location,
+      </if>
+      <if test="userListLocation != null" >
+        user_list_location,
+      </if>
+      <if test="priority != null" >
+        priority,
+      </if>
+      <if test="deliveryTime != null" >
+        delivery_time,
+      </if>
+      <if test="expressPayType != null" >
+        express_pay_type,
+      </if>
+      <if test="expressFee != null" >
+        express_fee,
+      </if>
+      <if test="needDesign != null" >
+        need_design,
+      </if>
+      <if test="designFee != null" >
+        design_fee,
+      </if>
+      <if test="profit != null" >
+        profit,
+      </if>
+      <if test="taxRate != null" >
+        tax_rate,
+      </if>
+      <if test="tax != null" >
+        tax,
+      </if>
+      <if test="discount != null" >
+        discount,
+      </if>
+      <if test="discountRate != null" >
+        discount_rate,
+      </if>
+      <if test="total != null" >
+        total,
+      </if>
+      <if test="finalPrice != null" >
+        final_price,
+      </if>
+      <if test="finalPriceDiscount != null" >
+        final_price_discount,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="showTax != null" >
+        show_tax,
+      </if>
+      <if test="quoter != null" >
+        quoter,
+      </if>
+      <if test="proStatus != null" >
+        pro_status,
+      </if>
+      <if test="requote != null" >
+        requote,
+      </if>
+      <if test="overTime != null" >
+        over_time,
+      </if>
+      <if test="hasOrderIntention != null" >
+        has_order_intention,
+      </if>
+      <if test="hasOrder != null" >
+        has_order,
+      </if>
+      <if test="quotePdf != null" >
+        quote_pdf,
+      </if>
+      <if test="quoteXls != null" >
+        quote_xls,
+      </if>
+      <if test="costPrice != null" >
+        cost_price,
+      </if>
+      <if test="grossProfit != null" >
+        gross_profit,
+      </if>
+      <if test="grossProfitRate != null" >
+        gross_profit_rate,
+      </if>
+      <if test="lastDrawingLocation != null" >
+        last_drawing_location,
+      </if>
+      <if test="lastListLocation != null" >
+        last_list_location,
+      </if>
+      <if test="loseRemark != null" >
+        lose_remark,
+      </if>
+      <if test="loseTime != null" >
+        lose_time,
+      </if>
+      <if test="loseReason != null" >
+        lose_reason,
+      </if>
+      <if test="losePerson != null" >
+        lose_person,
+      </if>
+      <if test="isUrgent != null" >
+        is_urgent,
+      </if>
+      <if test="urgentFee != null" >
+        urgent_fee,
+      </if>
+      <if test="round != null" >
+        ROUND,
+      </if>
+      <if test="innerQuoteStatus != null" >
+        inner_quote_status,
+      </if>
+      <if test="taxRatePoint != null" >
+        tax_rate_point,
+      </if>
+      <if test="isRemark != null" >
+        is_remark,
+      </if>
+      <if test="orderSize != null" >
+        order_size,
+      </if>
+      <if test="followUp != null" >
+        follow_up,
+      </if>
+      <if test="isRegular != null" >
+        is_regular,
+      </if>
+      <if test="expectDeliveryDays != null" >
+        expect_delivery_days,
+      </if>
+      <if test="expectTotalPrice != null" >
+        expect_total_price,
+      </if>
+      <if test="whetherContainsFreight != null" >
+        whether_contains_freight,
+      </if>
+      <if test="everMachined != null" >
+        ever_machined,
+      </if>
+      <if test="quotationFromSupplier != null" >
+        quotation_from_supplier,
+      </if>
+      <if test="sendCity != null" >
+        send_city,
+      </if>
+      <if test="noFreightReason != null" >
+        no_freight_reason,
+      </if>
+      <if test="toningFee != null" >
+        toning_fee,
+      </if>
+      <if test="minSpreadPrice != null" >
+        min_spread_price,
+      </if>
+      <if test="expectQuoteTime != null" >
+        expect_quote_time,
+      </if>
+      <if test="drawingStandard != null" >
+        drawing_standard,
+      </if>
+      <if test="deliveryDate != null" >
+        delivery_date,
+      </if>
+      <if test="wireServiceFee != null" >
+        wire_service_fee,
+      </if>
+      <if test="relatedAddressId != null" >
+        related_address_id,
+      </if>
+      <if test="materialCertFee != null" >
+        material_cert_fee,
+      </if>
+      <if test="dimInspectionFee != null" >
+        dim_inspection_fee,
+      </if>
+      <if test="cmmInspectionFee != null" >
+        cmm_inspection_fee,
+      </if>
+      <if test="inquirerTimeZone != null" >
+        inquirer_time_zone,
+      </if>
+      <if test="shippingTermType != null" >
+        shipping_term_type,
+      </if>
+      <if test="paymentConditionType != null" >
+        payment_condition_type,
+      </if>
+      <if test="customerStatus != null" >
+        customer_status,
+      </if>
+      <if test="loadTimeStandard != null" >
+        load_time_standard,
+      </if>
+      <if test="shippingStandard != null" >
+        shipping_standard,
+      </if>
+      <if test="shippingCycle != null" >
+        shipping_cycle,
+      </if>
+      <if test="shippingTerm != null" >
+        shipping_term,
+      </if>
+      <if test="customDuty != null" >
+        custom_duty,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="inquirer != null" >
+        #{inquirer,jdbcType=VARCHAR},
+      </if>
+      <if test="inquirerName != null" >
+        #{inquirerName,jdbcType=VARCHAR},
+      </if>
+      <if test="inquirerCompany != null" >
+        #{inquirerCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="inquirerTime != null" >
+        #{inquirerTime,jdbcType=VARCHAR},
+      </if>
+      <if test="machiningType != null" >
+        #{machiningType,jdbcType=VARCHAR},
+      </if>
+      <if test="hasMaterial != null" >
+        #{hasMaterial,jdbcType=VARCHAR},
+      </if>
+      <if test="userDrawingLocation != null" >
+        #{userDrawingLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="userListLocation != null" >
+        #{userListLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="priority != null" >
+        #{priority,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryTime != null" >
+        #{deliveryTime,jdbcType=VARCHAR},
+      </if>
+      <if test="expressPayType != null" >
+        #{expressPayType,jdbcType=VARCHAR},
+      </if>
+      <if test="expressFee != null" >
+        #{expressFee,jdbcType=DOUBLE},
+      </if>
+      <if test="needDesign != null" >
+        #{needDesign,jdbcType=VARCHAR},
+      </if>
+      <if test="designFee != null" >
+        #{designFee,jdbcType=DOUBLE},
+      </if>
+      <if test="profit != null" >
+        #{profit,jdbcType=DOUBLE},
+      </if>
+      <if test="taxRate != null" >
+        #{taxRate,jdbcType=VARCHAR},
+      </if>
+      <if test="tax != null" >
+        #{tax,jdbcType=DOUBLE},
+      </if>
+      <if test="discount != null" >
+        #{discount,jdbcType=DOUBLE},
+      </if>
+      <if test="discountRate != null" >
+        #{discountRate,jdbcType=DOUBLE},
+      </if>
+      <if test="total != null" >
+        #{total,jdbcType=DOUBLE},
+      </if>
+      <if test="finalPrice != null" >
+        #{finalPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="finalPriceDiscount != null" >
+        #{finalPriceDiscount,jdbcType=DOUBLE},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="showTax != null" >
+        #{showTax,jdbcType=CHAR},
+      </if>
+      <if test="quoter != null" >
+        #{quoter,jdbcType=VARCHAR},
+      </if>
+      <if test="proStatus != null" >
+        #{proStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="requote != null" >
+        #{requote,jdbcType=INTEGER},
+      </if>
+      <if test="overTime != null" >
+        #{overTime,jdbcType=VARCHAR},
+      </if>
+      <if test="hasOrderIntention != null" >
+        #{hasOrderIntention,jdbcType=VARCHAR},
+      </if>
+      <if test="hasOrder != null" >
+        #{hasOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="quotePdf != null" >
+        #{quotePdf,jdbcType=VARCHAR},
+      </if>
+      <if test="quoteXls != null" >
+        #{quoteXls,jdbcType=VARCHAR},
+      </if>
+      <if test="costPrice != null" >
+        #{costPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="grossProfit != null" >
+        #{grossProfit,jdbcType=DOUBLE},
+      </if>
+      <if test="grossProfitRate != null" >
+        #{grossProfitRate,jdbcType=DOUBLE},
+      </if>
+      <if test="lastDrawingLocation != null" >
+        #{lastDrawingLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="lastListLocation != null" >
+        #{lastListLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="loseRemark != null" >
+        #{loseRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="loseTime != null" >
+        #{loseTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loseReason != null" >
+        #{loseReason,jdbcType=VARCHAR},
+      </if>
+      <if test="losePerson != null" >
+        #{losePerson,jdbcType=VARCHAR},
+      </if>
+      <if test="isUrgent != null" >
+        #{isUrgent,jdbcType=VARCHAR},
+      </if>
+      <if test="urgentFee != null" >
+        #{urgentFee,jdbcType=VARCHAR},
+      </if>
+      <if test="round != null" >
+        #{round,jdbcType=VARCHAR},
+      </if>
+      <if test="innerQuoteStatus != null" >
+        #{innerQuoteStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="taxRatePoint != null" >
+        #{taxRatePoint,jdbcType=DECIMAL},
+      </if>
+      <if test="isRemark != null" >
+        #{isRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="orderSize != null" >
+        #{orderSize,jdbcType=VARCHAR},
+      </if>
+      <if test="followUp != null" >
+        #{followUp,jdbcType=VARCHAR},
+      </if>
+      <if test="isRegular != null" >
+        #{isRegular,jdbcType=VARCHAR},
+      </if>
+      <if test="expectDeliveryDays != null" >
+        #{expectDeliveryDays,jdbcType=VARCHAR},
+      </if>
+      <if test="expectTotalPrice != null" >
+        #{expectTotalPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="whetherContainsFreight != null" >
+        #{whetherContainsFreight,jdbcType=VARCHAR},
+      </if>
+      <if test="everMachined != null" >
+        #{everMachined,jdbcType=VARCHAR},
+      </if>
+      <if test="quotationFromSupplier != null" >
+        #{quotationFromSupplier,jdbcType=VARCHAR},
+      </if>
+      <if test="sendCity != null" >
+        #{sendCity,jdbcType=VARCHAR},
+      </if>
+      <if test="noFreightReason != null" >
+        #{noFreightReason,jdbcType=VARCHAR},
+      </if>
+      <if test="toningFee != null" >
+        #{toningFee,jdbcType=DECIMAL},
+      </if>
+      <if test="minSpreadPrice != null" >
+        #{minSpreadPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="expectQuoteTime != null" >
+        #{expectQuoteTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="drawingStandard != null" >
+        #{drawingStandard,jdbcType=CHAR},
+      </if>
+      <if test="deliveryDate != null" >
+        #{deliveryDate,jdbcType=VARCHAR},
+      </if>
+      <if test="wireServiceFee != null" >
+        #{wireServiceFee,jdbcType=DECIMAL},
+      </if>
+      <if test="relatedAddressId != null" >
+        #{relatedAddressId,jdbcType=VARCHAR},
+      </if>
+      <if test="materialCertFee != null" >
+        #{materialCertFee,jdbcType=DECIMAL},
+      </if>
+      <if test="dimInspectionFee != null" >
+        #{dimInspectionFee,jdbcType=DECIMAL},
+      </if>
+      <if test="cmmInspectionFee != null" >
+        #{cmmInspectionFee,jdbcType=DECIMAL},
+      </if>
+      <if test="inquirerTimeZone != null" >
+        #{inquirerTimeZone,jdbcType=VARCHAR},
+      </if>
+      <if test="shippingTermType != null" >
+        #{shippingTermType,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentConditionType != null" >
+        #{paymentConditionType,jdbcType=VARCHAR},
+      </if>
+      <if test="customerStatus != null" >
+        #{customerStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="loadTimeStandard != null" >
+        #{loadTimeStandard,jdbcType=VARCHAR},
+      </if>
+      <if test="shippingStandard != null" >
+        #{shippingStandard,jdbcType=VARCHAR},
+      </if>
+      <if test="shippingCycle != null" >
+        #{shippingCycle,jdbcType=VARCHAR},
+      </if>
+      <if test="shippingTerm != null" >
+        #{shippingTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="customDuty != null" >
+        #{customDuty,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.sogaa.system.service.businessfunctionrelation.bean.QuotationBaseExample" resultType="java.lang.Integer" >
+    select count(*) from quotation_base
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update quotation_base
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.inquirer != null" >
+        inquirer = #{record.inquirer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.inquirerName != null" >
+        inquirer_name = #{record.inquirerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.inquirerCompany != null" >
+        inquirer_company = #{record.inquirerCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="record.inquirerTime != null" >
+        inquirer_time = #{record.inquirerTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.machiningType != null" >
+        machining_type = #{record.machiningType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hasMaterial != null" >
+        has_material = #{record.hasMaterial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userDrawingLocation != null" >
+        user_drawing_location = #{record.userDrawingLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userListLocation != null" >
+        user_list_location = #{record.userListLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.priority != null" >
+        priority = #{record.priority,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deliveryTime != null" >
+        delivery_time = #{record.deliveryTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expressPayType != null" >
+        express_pay_type = #{record.expressPayType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expressFee != null" >
+        express_fee = #{record.expressFee,jdbcType=DOUBLE},
+      </if>
+      <if test="record.needDesign != null" >
+        need_design = #{record.needDesign,jdbcType=VARCHAR},
+      </if>
+      <if test="record.designFee != null" >
+        design_fee = #{record.designFee,jdbcType=DOUBLE},
+      </if>
+      <if test="record.profit != null" >
+        profit = #{record.profit,jdbcType=DOUBLE},
+      </if>
+      <if test="record.taxRate != null" >
+        tax_rate = #{record.taxRate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tax != null" >
+        tax = #{record.tax,jdbcType=DOUBLE},
+      </if>
+      <if test="record.discount != null" >
+        discount = #{record.discount,jdbcType=DOUBLE},
+      </if>
+      <if test="record.discountRate != null" >
+        discount_rate = #{record.discountRate,jdbcType=DOUBLE},
+      </if>
+      <if test="record.total != null" >
+        total = #{record.total,jdbcType=DOUBLE},
+      </if>
+      <if test="record.finalPrice != null" >
+        final_price = #{record.finalPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="record.finalPriceDiscount != null" >
+        final_price_discount = #{record.finalPriceDiscount,jdbcType=DOUBLE},
+      </if>
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.showTax != null" >
+        show_tax = #{record.showTax,jdbcType=CHAR},
+      </if>
+      <if test="record.quoter != null" >
+        quoter = #{record.quoter,jdbcType=VARCHAR},
+      </if>
+      <if test="record.proStatus != null" >
+        pro_status = #{record.proStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.requote != null" >
+        requote = #{record.requote,jdbcType=INTEGER},
+      </if>
+      <if test="record.overTime != null" >
+        over_time = #{record.overTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hasOrderIntention != null" >
+        has_order_intention = #{record.hasOrderIntention,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hasOrder != null" >
+        has_order = #{record.hasOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="record.quotePdf != null" >
+        quote_pdf = #{record.quotePdf,jdbcType=VARCHAR},
+      </if>
+      <if test="record.quoteXls != null" >
+        quote_xls = #{record.quoteXls,jdbcType=VARCHAR},
+      </if>
+      <if test="record.costPrice != null" >
+        cost_price = #{record.costPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="record.grossProfit != null" >
+        gross_profit = #{record.grossProfit,jdbcType=DOUBLE},
+      </if>
+      <if test="record.grossProfitRate != null" >
+        gross_profit_rate = #{record.grossProfitRate,jdbcType=DOUBLE},
+      </if>
+      <if test="record.lastDrawingLocation != null" >
+        last_drawing_location = #{record.lastDrawingLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lastListLocation != null" >
+        last_list_location = #{record.lastListLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loseRemark != null" >
+        lose_remark = #{record.loseRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loseTime != null" >
+        lose_time = #{record.loseTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.loseReason != null" >
+        lose_reason = #{record.loseReason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.losePerson != null" >
+        lose_person = #{record.losePerson,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isUrgent != null" >
+        is_urgent = #{record.isUrgent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.urgentFee != null" >
+        urgent_fee = #{record.urgentFee,jdbcType=VARCHAR},
+      </if>
+      <if test="record.round != null" >
+        ROUND = #{record.round,jdbcType=VARCHAR},
+      </if>
+      <if test="record.innerQuoteStatus != null" >
+        inner_quote_status = #{record.innerQuoteStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxRatePoint != null" >
+        tax_rate_point = #{record.taxRatePoint,jdbcType=DECIMAL},
+      </if>
+      <if test="record.isRemark != null" >
+        is_remark = #{record.isRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderSize != null" >
+        order_size = #{record.orderSize,jdbcType=VARCHAR},
+      </if>
+      <if test="record.followUp != null" >
+        follow_up = #{record.followUp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isRegular != null" >
+        is_regular = #{record.isRegular,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expectDeliveryDays != null" >
+        expect_delivery_days = #{record.expectDeliveryDays,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expectTotalPrice != null" >
+        expect_total_price = #{record.expectTotalPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="record.whetherContainsFreight != null" >
+        whether_contains_freight = #{record.whetherContainsFreight,jdbcType=VARCHAR},
+      </if>
+      <if test="record.everMachined != null" >
+        ever_machined = #{record.everMachined,jdbcType=VARCHAR},
+      </if>
+      <if test="record.quotationFromSupplier != null" >
+        quotation_from_supplier = #{record.quotationFromSupplier,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sendCity != null" >
+        send_city = #{record.sendCity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.noFreightReason != null" >
+        no_freight_reason = #{record.noFreightReason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.toningFee != null" >
+        toning_fee = #{record.toningFee,jdbcType=DECIMAL},
+      </if>
+      <if test="record.minSpreadPrice != null" >
+        min_spread_price = #{record.minSpreadPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.expectQuoteTime != null" >
+        expect_quote_time = #{record.expectQuoteTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.drawingStandard != null" >
+        drawing_standard = #{record.drawingStandard,jdbcType=CHAR},
+      </if>
+      <if test="record.deliveryDate != null" >
+        delivery_date = #{record.deliveryDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wireServiceFee != null" >
+        wire_service_fee = #{record.wireServiceFee,jdbcType=DECIMAL},
+      </if>
+      <if test="record.relatedAddressId != null" >
+        related_address_id = #{record.relatedAddressId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.materialCertFee != null" >
+        material_cert_fee = #{record.materialCertFee,jdbcType=DECIMAL},
+      </if>
+      <if test="record.dimInspectionFee != null" >
+        dim_inspection_fee = #{record.dimInspectionFee,jdbcType=DECIMAL},
+      </if>
+      <if test="record.cmmInspectionFee != null" >
+        cmm_inspection_fee = #{record.cmmInspectionFee,jdbcType=DECIMAL},
+      </if>
+      <if test="record.inquirerTimeZone != null" >
+        inquirer_time_zone = #{record.inquirerTimeZone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shippingTermType != null" >
+        shipping_term_type = #{record.shippingTermType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.paymentConditionType != null" >
+        payment_condition_type = #{record.paymentConditionType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customerStatus != null" >
+        customer_status = #{record.customerStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loadTimeStandard != null" >
+        load_time_standard = #{record.loadTimeStandard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shippingStandard != null" >
+        shipping_standard = #{record.shippingStandard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shippingCycle != null" >
+        shipping_cycle = #{record.shippingCycle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shippingTerm != null" >
+        shipping_term = #{record.shippingTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customDuty != null" >
+        custom_duty = #{record.customDuty,jdbcType=DECIMAL},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gmtModified != null" >
+        gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update quotation_base
+    set id = #{record.id,jdbcType=VARCHAR},
+      inquirer = #{record.inquirer,jdbcType=VARCHAR},
+      inquirer_name = #{record.inquirerName,jdbcType=VARCHAR},
+      inquirer_company = #{record.inquirerCompany,jdbcType=VARCHAR},
+      inquirer_time = #{record.inquirerTime,jdbcType=VARCHAR},
+      machining_type = #{record.machiningType,jdbcType=VARCHAR},
+      has_material = #{record.hasMaterial,jdbcType=VARCHAR},
+      user_drawing_location = #{record.userDrawingLocation,jdbcType=VARCHAR},
+      user_list_location = #{record.userListLocation,jdbcType=VARCHAR},
+      priority = #{record.priority,jdbcType=VARCHAR},
+      delivery_time = #{record.deliveryTime,jdbcType=VARCHAR},
+      express_pay_type = #{record.expressPayType,jdbcType=VARCHAR},
+      express_fee = #{record.expressFee,jdbcType=DOUBLE},
+      need_design = #{record.needDesign,jdbcType=VARCHAR},
+      design_fee = #{record.designFee,jdbcType=DOUBLE},
+      profit = #{record.profit,jdbcType=DOUBLE},
+      tax_rate = #{record.taxRate,jdbcType=VARCHAR},
+      tax = #{record.tax,jdbcType=DOUBLE},
+      discount = #{record.discount,jdbcType=DOUBLE},
+      discount_rate = #{record.discountRate,jdbcType=DOUBLE},
+      total = #{record.total,jdbcType=DOUBLE},
+      final_price = #{record.finalPrice,jdbcType=DOUBLE},
+      final_price_discount = #{record.finalPriceDiscount,jdbcType=DOUBLE},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      show_tax = #{record.showTax,jdbcType=CHAR},
+      quoter = #{record.quoter,jdbcType=VARCHAR},
+      pro_status = #{record.proStatus,jdbcType=VARCHAR},
+      requote = #{record.requote,jdbcType=INTEGER},
+      over_time = #{record.overTime,jdbcType=VARCHAR},
+      has_order_intention = #{record.hasOrderIntention,jdbcType=VARCHAR},
+      has_order = #{record.hasOrder,jdbcType=VARCHAR},
+      quote_pdf = #{record.quotePdf,jdbcType=VARCHAR},
+      quote_xls = #{record.quoteXls,jdbcType=VARCHAR},
+      cost_price = #{record.costPrice,jdbcType=DOUBLE},
+      gross_profit = #{record.grossProfit,jdbcType=DOUBLE},
+      gross_profit_rate = #{record.grossProfitRate,jdbcType=DOUBLE},
+      last_drawing_location = #{record.lastDrawingLocation,jdbcType=VARCHAR},
+      last_list_location = #{record.lastListLocation,jdbcType=VARCHAR},
+      lose_remark = #{record.loseRemark,jdbcType=VARCHAR},
+      lose_time = #{record.loseTime,jdbcType=TIMESTAMP},
+      lose_reason = #{record.loseReason,jdbcType=VARCHAR},
+      lose_person = #{record.losePerson,jdbcType=VARCHAR},
+      is_urgent = #{record.isUrgent,jdbcType=VARCHAR},
+      urgent_fee = #{record.urgentFee,jdbcType=VARCHAR},
+      ROUND = #{record.round,jdbcType=VARCHAR},
+      inner_quote_status = #{record.innerQuoteStatus,jdbcType=VARCHAR},
+      tax_rate_point = #{record.taxRatePoint,jdbcType=DECIMAL},
+      is_remark = #{record.isRemark,jdbcType=VARCHAR},
+      order_size = #{record.orderSize,jdbcType=VARCHAR},
+      follow_up = #{record.followUp,jdbcType=VARCHAR},
+      is_regular = #{record.isRegular,jdbcType=VARCHAR},
+      expect_delivery_days = #{record.expectDeliveryDays,jdbcType=VARCHAR},
+      expect_total_price = #{record.expectTotalPrice,jdbcType=DOUBLE},
+      whether_contains_freight = #{record.whetherContainsFreight,jdbcType=VARCHAR},
+      ever_machined = #{record.everMachined,jdbcType=VARCHAR},
+      quotation_from_supplier = #{record.quotationFromSupplier,jdbcType=VARCHAR},
+      send_city = #{record.sendCity,jdbcType=VARCHAR},
+      no_freight_reason = #{record.noFreightReason,jdbcType=VARCHAR},
+      toning_fee = #{record.toningFee,jdbcType=DECIMAL},
+      min_spread_price = #{record.minSpreadPrice,jdbcType=DECIMAL},
+      expect_quote_time = #{record.expectQuoteTime,jdbcType=TIMESTAMP},
+      drawing_standard = #{record.drawingStandard,jdbcType=CHAR},
+      delivery_date = #{record.deliveryDate,jdbcType=VARCHAR},
+      wire_service_fee = #{record.wireServiceFee,jdbcType=DECIMAL},
+      related_address_id = #{record.relatedAddressId,jdbcType=VARCHAR},
+      material_cert_fee = #{record.materialCertFee,jdbcType=DECIMAL},
+      dim_inspection_fee = #{record.dimInspectionFee,jdbcType=DECIMAL},
+      cmm_inspection_fee = #{record.cmmInspectionFee,jdbcType=DECIMAL},
+      inquirer_time_zone = #{record.inquirerTimeZone,jdbcType=VARCHAR},
+      shipping_term_type = #{record.shippingTermType,jdbcType=VARCHAR},
+      payment_condition_type = #{record.paymentConditionType,jdbcType=VARCHAR},
+      customer_status = #{record.customerStatus,jdbcType=VARCHAR},
+      load_time_standard = #{record.loadTimeStandard,jdbcType=VARCHAR},
+      shipping_standard = #{record.shippingStandard,jdbcType=VARCHAR},
+      shipping_cycle = #{record.shippingCycle,jdbcType=VARCHAR},
+      shipping_term = #{record.shippingTerm,jdbcType=VARCHAR},
+      custom_duty = #{record.customDuty,jdbcType=DECIMAL},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sogaa.system.service.businessfunctionrelation.bean.QuotationBase" >
+    update quotation_base
+    <set >
+      <if test="inquirer != null" >
+        inquirer = #{inquirer,jdbcType=VARCHAR},
+      </if>
+      <if test="inquirerName != null" >
+        inquirer_name = #{inquirerName,jdbcType=VARCHAR},
+      </if>
+      <if test="inquirerCompany != null" >
+        inquirer_company = #{inquirerCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="inquirerTime != null" >
+        inquirer_time = #{inquirerTime,jdbcType=VARCHAR},
+      </if>
+      <if test="machiningType != null" >
+        machining_type = #{machiningType,jdbcType=VARCHAR},
+      </if>
+      <if test="hasMaterial != null" >
+        has_material = #{hasMaterial,jdbcType=VARCHAR},
+      </if>
+      <if test="userDrawingLocation != null" >
+        user_drawing_location = #{userDrawingLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="userListLocation != null" >
+        user_list_location = #{userListLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="priority != null" >
+        priority = #{priority,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryTime != null" >
+        delivery_time = #{deliveryTime,jdbcType=VARCHAR},
+      </if>
+      <if test="expressPayType != null" >
+        express_pay_type = #{expressPayType,jdbcType=VARCHAR},
+      </if>
+      <if test="expressFee != null" >
+        express_fee = #{expressFee,jdbcType=DOUBLE},
+      </if>
+      <if test="needDesign != null" >
+        need_design = #{needDesign,jdbcType=VARCHAR},
+      </if>
+      <if test="designFee != null" >
+        design_fee = #{designFee,jdbcType=DOUBLE},
+      </if>
+      <if test="profit != null" >
+        profit = #{profit,jdbcType=DOUBLE},
+      </if>
+      <if test="taxRate != null" >
+        tax_rate = #{taxRate,jdbcType=VARCHAR},
+      </if>
+      <if test="tax != null" >
+        tax = #{tax,jdbcType=DOUBLE},
+      </if>
+      <if test="discount != null" >
+        discount = #{discount,jdbcType=DOUBLE},
+      </if>
+      <if test="discountRate != null" >
+        discount_rate = #{discountRate,jdbcType=DOUBLE},
+      </if>
+      <if test="total != null" >
+        total = #{total,jdbcType=DOUBLE},
+      </if>
+      <if test="finalPrice != null" >
+        final_price = #{finalPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="finalPriceDiscount != null" >
+        final_price_discount = #{finalPriceDiscount,jdbcType=DOUBLE},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="showTax != null" >
+        show_tax = #{showTax,jdbcType=CHAR},
+      </if>
+      <if test="quoter != null" >
+        quoter = #{quoter,jdbcType=VARCHAR},
+      </if>
+      <if test="proStatus != null" >
+        pro_status = #{proStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="requote != null" >
+        requote = #{requote,jdbcType=INTEGER},
+      </if>
+      <if test="overTime != null" >
+        over_time = #{overTime,jdbcType=VARCHAR},
+      </if>
+      <if test="hasOrderIntention != null" >
+        has_order_intention = #{hasOrderIntention,jdbcType=VARCHAR},
+      </if>
+      <if test="hasOrder != null" >
+        has_order = #{hasOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="quotePdf != null" >
+        quote_pdf = #{quotePdf,jdbcType=VARCHAR},
+      </if>
+      <if test="quoteXls != null" >
+        quote_xls = #{quoteXls,jdbcType=VARCHAR},
+      </if>
+      <if test="costPrice != null" >
+        cost_price = #{costPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="grossProfit != null" >
+        gross_profit = #{grossProfit,jdbcType=DOUBLE},
+      </if>
+      <if test="grossProfitRate != null" >
+        gross_profit_rate = #{grossProfitRate,jdbcType=DOUBLE},
+      </if>
+      <if test="lastDrawingLocation != null" >
+        last_drawing_location = #{lastDrawingLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="lastListLocation != null" >
+        last_list_location = #{lastListLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="loseRemark != null" >
+        lose_remark = #{loseRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="loseTime != null" >
+        lose_time = #{loseTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loseReason != null" >
+        lose_reason = #{loseReason,jdbcType=VARCHAR},
+      </if>
+      <if test="losePerson != null" >
+        lose_person = #{losePerson,jdbcType=VARCHAR},
+      </if>
+      <if test="isUrgent != null" >
+        is_urgent = #{isUrgent,jdbcType=VARCHAR},
+      </if>
+      <if test="urgentFee != null" >
+        urgent_fee = #{urgentFee,jdbcType=VARCHAR},
+      </if>
+      <if test="round != null" >
+        ROUND = #{round,jdbcType=VARCHAR},
+      </if>
+      <if test="innerQuoteStatus != null" >
+        inner_quote_status = #{innerQuoteStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="taxRatePoint != null" >
+        tax_rate_point = #{taxRatePoint,jdbcType=DECIMAL},
+      </if>
+      <if test="isRemark != null" >
+        is_remark = #{isRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="orderSize != null" >
+        order_size = #{orderSize,jdbcType=VARCHAR},
+      </if>
+      <if test="followUp != null" >
+        follow_up = #{followUp,jdbcType=VARCHAR},
+      </if>
+      <if test="isRegular != null" >
+        is_regular = #{isRegular,jdbcType=VARCHAR},
+      </if>
+      <if test="expectDeliveryDays != null" >
+        expect_delivery_days = #{expectDeliveryDays,jdbcType=VARCHAR},
+      </if>
+      <if test="expectTotalPrice != null" >
+        expect_total_price = #{expectTotalPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="whetherContainsFreight != null" >
+        whether_contains_freight = #{whetherContainsFreight,jdbcType=VARCHAR},
+      </if>
+      <if test="everMachined != null" >
+        ever_machined = #{everMachined,jdbcType=VARCHAR},
+      </if>
+      <if test="quotationFromSupplier != null" >
+        quotation_from_supplier = #{quotationFromSupplier,jdbcType=VARCHAR},
+      </if>
+      <if test="sendCity != null" >
+        send_city = #{sendCity,jdbcType=VARCHAR},
+      </if>
+      <if test="noFreightReason != null" >
+        no_freight_reason = #{noFreightReason,jdbcType=VARCHAR},
+      </if>
+      <if test="toningFee != null" >
+        toning_fee = #{toningFee,jdbcType=DECIMAL},
+      </if>
+      <if test="minSpreadPrice != null" >
+        min_spread_price = #{minSpreadPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="expectQuoteTime != null" >
+        expect_quote_time = #{expectQuoteTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="drawingStandard != null" >
+        drawing_standard = #{drawingStandard,jdbcType=CHAR},
+      </if>
+      <if test="deliveryDate != null" >
+        delivery_date = #{deliveryDate,jdbcType=VARCHAR},
+      </if>
+      <if test="wireServiceFee != null" >
+        wire_service_fee = #{wireServiceFee,jdbcType=DECIMAL},
+      </if>
+      <if test="relatedAddressId != null" >
+        related_address_id = #{relatedAddressId,jdbcType=VARCHAR},
+      </if>
+      <if test="materialCertFee != null" >
+        material_cert_fee = #{materialCertFee,jdbcType=DECIMAL},
+      </if>
+      <if test="dimInspectionFee != null" >
+        dim_inspection_fee = #{dimInspectionFee,jdbcType=DECIMAL},
+      </if>
+      <if test="cmmInspectionFee != null" >
+        cmm_inspection_fee = #{cmmInspectionFee,jdbcType=DECIMAL},
+      </if>
+      <if test="inquirerTimeZone != null" >
+        inquirer_time_zone = #{inquirerTimeZone,jdbcType=VARCHAR},
+      </if>
+      <if test="shippingTermType != null" >
+        shipping_term_type = #{shippingTermType,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentConditionType != null" >
+        payment_condition_type = #{paymentConditionType,jdbcType=VARCHAR},
+      </if>
+      <if test="customerStatus != null" >
+        customer_status = #{customerStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="loadTimeStandard != null" >
+        load_time_standard = #{loadTimeStandard,jdbcType=VARCHAR},
+      </if>
+      <if test="shippingStandard != null" >
+        shipping_standard = #{shippingStandard,jdbcType=VARCHAR},
+      </if>
+      <if test="shippingCycle != null" >
+        shipping_cycle = #{shippingCycle,jdbcType=VARCHAR},
+      </if>
+      <if test="shippingTerm != null" >
+        shipping_term = #{shippingTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="customDuty != null" >
+        custom_duty = #{customDuty,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sogaa.system.service.businessfunctionrelation.bean.QuotationBase" >
+    update quotation_base
+    set inquirer = #{inquirer,jdbcType=VARCHAR},
+      inquirer_name = #{inquirerName,jdbcType=VARCHAR},
+      inquirer_company = #{inquirerCompany,jdbcType=VARCHAR},
+      inquirer_time = #{inquirerTime,jdbcType=VARCHAR},
+      machining_type = #{machiningType,jdbcType=VARCHAR},
+      has_material = #{hasMaterial,jdbcType=VARCHAR},
+      user_drawing_location = #{userDrawingLocation,jdbcType=VARCHAR},
+      user_list_location = #{userListLocation,jdbcType=VARCHAR},
+      priority = #{priority,jdbcType=VARCHAR},
+      delivery_time = #{deliveryTime,jdbcType=VARCHAR},
+      express_pay_type = #{expressPayType,jdbcType=VARCHAR},
+      express_fee = #{expressFee,jdbcType=DOUBLE},
+      need_design = #{needDesign,jdbcType=VARCHAR},
+      design_fee = #{designFee,jdbcType=DOUBLE},
+      profit = #{profit,jdbcType=DOUBLE},
+      tax_rate = #{taxRate,jdbcType=VARCHAR},
+      tax = #{tax,jdbcType=DOUBLE},
+      discount = #{discount,jdbcType=DOUBLE},
+      discount_rate = #{discountRate,jdbcType=DOUBLE},
+      total = #{total,jdbcType=DOUBLE},
+      final_price = #{finalPrice,jdbcType=DOUBLE},
+      final_price_discount = #{finalPriceDiscount,jdbcType=DOUBLE},
+      remark = #{remark,jdbcType=VARCHAR},
+      show_tax = #{showTax,jdbcType=CHAR},
+      quoter = #{quoter,jdbcType=VARCHAR},
+      pro_status = #{proStatus,jdbcType=VARCHAR},
+      requote = #{requote,jdbcType=INTEGER},
+      over_time = #{overTime,jdbcType=VARCHAR},
+      has_order_intention = #{hasOrderIntention,jdbcType=VARCHAR},
+      has_order = #{hasOrder,jdbcType=VARCHAR},
+      quote_pdf = #{quotePdf,jdbcType=VARCHAR},
+      quote_xls = #{quoteXls,jdbcType=VARCHAR},
+      cost_price = #{costPrice,jdbcType=DOUBLE},
+      gross_profit = #{grossProfit,jdbcType=DOUBLE},
+      gross_profit_rate = #{grossProfitRate,jdbcType=DOUBLE},
+      last_drawing_location = #{lastDrawingLocation,jdbcType=VARCHAR},
+      last_list_location = #{lastListLocation,jdbcType=VARCHAR},
+      lose_remark = #{loseRemark,jdbcType=VARCHAR},
+      lose_time = #{loseTime,jdbcType=TIMESTAMP},
+      lose_reason = #{loseReason,jdbcType=VARCHAR},
+      lose_person = #{losePerson,jdbcType=VARCHAR},
+      is_urgent = #{isUrgent,jdbcType=VARCHAR},
+      urgent_fee = #{urgentFee,jdbcType=VARCHAR},
+      ROUND = #{round,jdbcType=VARCHAR},
+      inner_quote_status = #{innerQuoteStatus,jdbcType=VARCHAR},
+      tax_rate_point = #{taxRatePoint,jdbcType=DECIMAL},
+      is_remark = #{isRemark,jdbcType=VARCHAR},
+      order_size = #{orderSize,jdbcType=VARCHAR},
+      follow_up = #{followUp,jdbcType=VARCHAR},
+      is_regular = #{isRegular,jdbcType=VARCHAR},
+      expect_delivery_days = #{expectDeliveryDays,jdbcType=VARCHAR},
+      expect_total_price = #{expectTotalPrice,jdbcType=DOUBLE},
+      whether_contains_freight = #{whetherContainsFreight,jdbcType=VARCHAR},
+      ever_machined = #{everMachined,jdbcType=VARCHAR},
+      quotation_from_supplier = #{quotationFromSupplier,jdbcType=VARCHAR},
+      send_city = #{sendCity,jdbcType=VARCHAR},
+      no_freight_reason = #{noFreightReason,jdbcType=VARCHAR},
+      toning_fee = #{toningFee,jdbcType=DECIMAL},
+      min_spread_price = #{minSpreadPrice,jdbcType=DECIMAL},
+      expect_quote_time = #{expectQuoteTime,jdbcType=TIMESTAMP},
+      drawing_standard = #{drawingStandard,jdbcType=CHAR},
+      delivery_date = #{deliveryDate,jdbcType=VARCHAR},
+      wire_service_fee = #{wireServiceFee,jdbcType=DECIMAL},
+      related_address_id = #{relatedAddressId,jdbcType=VARCHAR},
+      material_cert_fee = #{materialCertFee,jdbcType=DECIMAL},
+      dim_inspection_fee = #{dimInspectionFee,jdbcType=DECIMAL},
+      cmm_inspection_fee = #{cmmInspectionFee,jdbcType=DECIMAL},
+      inquirer_time_zone = #{inquirerTimeZone,jdbcType=VARCHAR},
+      shipping_term_type = #{shippingTermType,jdbcType=VARCHAR},
+      payment_condition_type = #{paymentConditionType,jdbcType=VARCHAR},
+      customer_status = #{customerStatus,jdbcType=VARCHAR},
+      load_time_standard = #{loadTimeStandard,jdbcType=VARCHAR},
+      shipping_standard = #{shippingStandard,jdbcType=VARCHAR},
+      shipping_cycle = #{shippingCycle,jdbcType=VARCHAR},
+      shipping_term = #{shippingTerm,jdbcType=VARCHAR},
+      custom_duty = #{customDuty,jdbcType=DECIMAL},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
